@@ -1,332 +1,335 @@
 <! DOCTYPE html>
 <html>
-<head>
-<title>HeyGuys</title>
-<link rel="icon" href="https://static-cdn.jtvnw.net/emoticons/v1/30259/3.0"/>
-<style>
-#photo{
-width:200px;
-height:200px;
-position: relative;
+    <head>
+    <title>HeyGuys</title>
+    <link rel="icon" href="https://static-cdn.jtvnw.net/emoticons/v1/30259/3.0"/>
+    <style>
+        #photo{
+            width:200px;
+            height:200px;
+            position: relative;
+            
+            left: 500px;
+            background-image:url('1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+        }
+        #photo2{
+            width:200px;
+            height:200px;
+            position: relative;
+            
+            left: 500px;
+            background-image:url('look.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+        }
+        #photo3{
+            width:200px;
+            height:200px;
+            position: relative;
+            
+            left: 500px;
+            background-image:url('her.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+        }
+        #txt1{
+            position: relative;
+            left: 500px;
+            display: block;
+        }
+        #dog{
+            top:100%;
+            width: 400px;
+            height:120px;
+            margin: 20px;
+            border-style: outset;
+            position: relative;
+            left: 480px;
+            display: none;
+        }
+        #meetHer{
+            top:100%;
+            width: 400px;
+            height:120px;
+            margin: 20px;
+            border-style: outset;
+            position: relative;
+            left: 480px;
+            display: none;
+        }
+        
+            *{padding:0px; margin:0px;}
+            a{ text-decoration:none; color:black;}
+            a:hover{text-decoration:none; color:#336699;}
+            #choice{top:100%;width:270px; padding:5px;height:150px;margin:20px;display:none;position:relative;left: 440px;}
+            #choice ul{list-style:none;height:30px;line-height:30px;border-bottom:2px #C88 solid;}
+            #choice ul li{background:#FFF;cursor:pointer;float:left;list-style:none ;height:29px; line-height:29px;padding:0px 10px;margin:0px 10px; border:1px solid #BBB; border-bottom:2px solid #C88;}
+            #choice ul li.on{border-top:2px solid gray; border-bottom:2px solid #FFF;}
+            #choice div{height:100px;width:400px;line-height:24px;border-top:none;padding:1px; border:1px solid #336699;padding:40px;}
+            .hide{display:none;}
+    </style>
+    <script type="text/javascript">
+        var photoF=0;
+        window.onload = function hi(){
+            var myTab = document.getElementById("choice");
+            var myUl = myTab.getElementsByTagName("ul")[0];
+            var myLi = myUl.getElementsByTagName("li");
+            var myDiv = myTab.getElementsByTagName("div");
+            var lastClick=1;
+            for(var i = 0; i<myLi.length;i++){
+                myLi[i].index = i;
+                myLi[i].onclick = function change(){
+                    
+                    for(var j = 0; j < myLi.length; j++){
+                        
+                        myLi[j].className="off";
+                    }
+                    
+                    for(var j = 0; j < myLi.length; j++){
+                        
+                        myDiv[j].className = "hide";
+                    }
+                    this.className = "on";
+                    
+                    myDiv[this.index].className = "show";
 
-left: 500px;
-background-image:url('1.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-position: top center;
-}
-#photo2{
-width:200px;
-height:200px;
-position: relative;
-
-left: 500px;
-background-image:url('look.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-position: top center;
-}
-#photo3{
-width:200px;
-height:200px;
-position: relative;
-
-left: 500px;
-background-image:url('her.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-position: top center;
-}
-#txt1{
-position: relative;
-left: 500px;
-display: block;
-}
-#dog{
-top:100%;
-width: 400px;
-height:120px;
-margin: 20px;
-border-style: outset;
-position: relative;
-left: 480px;
-display: none;
-}
-#meetHer{
-top:100%;
-width: 400px;
-height:120px;
-margin: 20px;
-border-style: outset;
-position: relative;
-left: 480px;
-display: none;
-}
-
-*{padding:0px; margin:0px;}
-a{ text-decoration:none; color:black;}
-a:hover{text-decoration:none; color:#336699;}
-#choice{top:100%;width:270px; padding:5px;height:150px;margin:20px;display:none;position:relative;left: 440px;}
-#choice ul{list-style:none;height:30px;line-height:30px;border-bottom:2px #C88 solid;}
-#choice ul li{background:#FFF;cursor:pointer;float:left;list-style:none ;height:29px; line-height:29px;padding:0px 10px;margin:0px 10px; border:1px solid #BBB; border-bottom:2px solid #C88;}
-#choice ul li.on{border-top:2px solid gray; border-bottom:2px solid #FFF;}
-#choice div{height:100px;width:400px;line-height:24px;border-top:none;padding:1px; border:1px solid #336699;padding:40px;}
-.hide{display:none;}
-</style>
-<script type="text/javascript">
-var photoF=0;
-window.onload = function hi(){
-var myTab = document.getElementById("choice");
-var myUl = myTab.getElementsByTagName("ul")[0];
-var myLi = myUl.getElementsByTagName("li");
-var myDiv = myTab.getElementsByTagName("div");
-var lastClick=1;
-for(var i = 0; i<myLi.length;i++){
-myLi[i].index = i;
-myLi[i].onclick = function change(){
-
-for(var j = 0; j < myLi.length; j++){
-
-myLi[j].className="off";
-}
-
-for(var j = 0; j < myLi.length; j++){
-
-myDiv[j].className = "hide";
-}
-this.className = "on";
-
-myDiv[this.index].className = "show";
-
-lastClick=this.index;
-}
-}
-}
-
-function photoAct(a){
-if(1/*photoF!=1*/){
-
-var elem;
-if(a==1){
-document.getElementById('photo2').style.display='none';
-document.getElementById('photo3').style.display='none';
-document.getElementById('choice').style.display='block';
-showCh();
-elem = document.getElementById("photo");
-}
-if(a==2){
-document.getElementById('photo').style.display='none';
-document.getElementById('photo3').style.display='none';
-document.getElementById('dog').style.display='block';
-showDog();
-elem = document.getElementById("photo2");
-}
-if(a==3){
-document.getElementById('photo').style.display='none';
-document.getElementById('photo2').style.display='none';
-document.getElementById('meetHer').style.display='block';
-showMeet();
-elem = document.getElementById("photo3");
-}
-document.getElementById('txt1').style.display='none';
-
-var pos = 100;
-var id = setInterval(frame, 10);
-function frame() {
-if (pos >= 400) {
-photoF=1;
-return;
-}
-else {
-pos=pos+20;
-elem.style.width = pos + 'px';
-elem.style.height = pos + 'px';
-}
-}
-
-}
-photoF=1;
-}
-function photoRe(a){
-if(1/*photoF!=0*/){
-if(a==1){
-hideCh();
-setTimeout(ano,170);
-}
-if(a==2){
-hideDog();
-setTimeout(anoDog,170);
-}
-if(a==3){
-hideMeet();
-setTimeout(anoMeet,170);
-}
-}
-photoF=0;
-}
-function ano(){
-document.getElementById('choice').style.display='none';
-document.getElementById('photo2').style.display='block';
-document.getElementById('photo3').style.display='block';
-document.getElementById('txt1').style.display='block';
-var elem = document.getElementById("photo");
-var pos = 400;
-var id = setInterval(frame, 10);
-function frame() {
-if (pos <= 200) {
-photoF=0;
-return;
-}
-else {
-pos=pos-20;
-elem.style.width = pos + 'px';
-elem.style.height = pos + 'px';
-}
-}
-}
-function anoDog(){
-document.getElementById('dog').style.display='none';
-document.getElementById('photo').style.display='block';
-document.getElementById('photo3').style.display='block';
-document.getElementById('txt1').style.display='block';
-var elem = document.getElementById("photo2");
-var pos = 400;
-var id = setInterval(frame, 10);
-function frame() {
-if (pos <= 200) {
-photoF=0;
-return;
-}
-else {
-pos=pos-20;
-elem.style.width = pos + 'px';
-elem.style.height = pos + 'px';
-}
-}
-}
-function anoMeet(){
-document.getElementById('meetHer').style.display='none';
-document.getElementById('photo').style.display='block';
-document.getElementById('photo2').style.display='block';
-document.getElementById('txt1').style.display='block';
-var elem = document.getElementById("photo3");
-var pos = 400;
-var id = setInterval(frame, 10);
-function frame() {
-if (pos <= 200) {
-photoF=0;
-return;
-}
-else {
-pos=pos-20;
-elem.style.width = pos + 'px';
-elem.style.height = pos + 'px';
-}
-}
-}
-</script>
-</head>
-<body>
-<div id="photo" onclick="photoAct(1)"></div>
-<br>
-<br>
-<div id="photo2" onclick="photoAct(2)"></div>
-<br>
-<br>
-<div id="photo3" onclick="photoAct(3)"></div>
-<div id="txt1">click photo!!</div>
-<div id="choice" >
-<ul>
-<li class="off">姓名</li>
-<li class="on">個人簡介</li>
-<li class="off">語言</li>
-<p onclick="photoRe(1)">X</p>
-</ul>
-<div id="firstPage" class="hide">
-<a href = "#">黃暐程</a><br/>
-</div>
-<div id="secondPage" class="show">
-<a href = "#">個性:成熟穩重負責認真</a><br/>
-<a href = "#">興趣:卡牌遊戲，噁心遊戲</a><br/>
-<a href = "#">簡歷:大學三年都是學渣QQ</a><br/>
-</div>
-<div id="thirdPage" class = "hide">
-<a href = "#">C,C++,Chinese,java</a><br/>
-<a href = "#">都只有皮毛，我真的學渣QQ</a><br/>
-</div>
-</div>
-<div id ="dog">
-<p onclick="photoRe(2)">X</p>
-<br>
-<p>這是我家的狗狗，你看過嗎?</p>
-<br>
-<p>不管怎樣，那你現在看過惹</p>
-</div>
-<div id ="meetHer">
-<p onclick="photoRe(3)">X</p>
-<br>
-<p>21歲，單身</p>
-<br>
-<p>想認識他嗎?</p>
-<a herf="https://www.youtube.com/watch?v=UjvMfcjBTwY">https://www.instagram.com/yun_sarang_/</a>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-
-function showCh(){
-var buf=$('#choice');
-buf.animate({
-'top':'0px'
-},200);
-}
-function hideCh(){
-var buf=$('#choice');
-buf.animate({
-'top':'100%'
-},200);
-}
-function showDog(){
-var buf=$('#dog');
-buf.animate({
-'top':'0px'
-},200);
-}
-function hideDog(){
-var buf=$('#dog');
-buf.animate({
-'top':'100%'
-},200);
-}
-function showMeet(){
-var buf=$('#meetHer');
-buf.animate({
-'top':'0px'
-},200);
-}
-function hideMeet(){
-var buf=$('#meetHer');
-buf.animate({
-'top':'100%'
-},200);
-}
-function moveLeftHide(num){
-var buf=getElementById("choice");
-var pageBuf;
-if(num==0){
-pageBuf=$('#firstPage');
-}
-else{
-if(num==1){
-pageBuf=$('#secondPage');
-}
-else{
-pageBuf=$('#thirdPage');
-}
-}
-pageBuf.animate({
-'padding':'0'
-},100);
-}
-</script>
-</body>
+                    lastClick=this.index;
+                }
+            }
+        }
+        
+        function photoAct(a){
+            if(1/*photoF!=1*/){
+                
+                var elem;
+                if(a==1){
+                    document.getElementById('photo2').style.display='none';
+                    document.getElementById('photo3').style.display='none';
+                    document.getElementById('choice').style.display='block';
+                    showCh();
+                    elem = document.getElementById("photo");
+                }
+                if(a==2){
+                    document.getElementById('photo').style.display='none';
+                    document.getElementById('photo3').style.display='none';
+                    document.getElementById('dog').style.display='block';
+                    showDog();
+                    elem = document.getElementById("photo2");
+                }
+                if(a==3){
+                    document.getElementById('photo').style.display='none';
+                    document.getElementById('photo2').style.display='none';
+                    document.getElementById('meetHer').style.display='block';
+                    showMeet();
+                    elem = document.getElementById("photo3");
+                }
+                document.getElementById('txt1').style.display='none';
+                 
+                var pos = 100;
+                var id = setInterval(frame, 10);
+                function frame() {
+                    if (pos >= 400) {
+                        photoF=1;
+                        return;
+                    } 
+                    else {
+                        pos=pos+20; 
+                        elem.style.width = pos + 'px'; 
+                        elem.style.height = pos + 'px'; 
+                    }
+                }
+            
+            }
+            photoF=1;
+        }
+        function photoRe(a){
+            if(1/*photoF!=0*/){
+                if(a==1){
+                    hideCh();
+                    setTimeout(ano,170);
+                }
+                if(a==2){
+                    hideDog();
+                    setTimeout(anoDog,170);
+                }
+                if(a==3){
+                    hideMeet();
+                    setTimeout(anoMeet,170);
+                }
+            }
+            photoF=0;
+        }
+        function ano(){
+            document.getElementById('choice').style.display='none';
+            document.getElementById('photo2').style.display='block';
+            document.getElementById('photo3').style.display='block';
+            document.getElementById('txt1').style.display='block';
+            var elem = document.getElementById("photo"); 
+            var pos = 400;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos <= 200) {
+                    photoF=0;
+                    return;
+                } 
+                else {
+                    pos=pos-20; 
+                    elem.style.width = pos + 'px'; 
+                    elem.style.height = pos + 'px'; 
+                }
+            }
+        }
+        function anoDog(){
+            document.getElementById('dog').style.display='none';
+            document.getElementById('photo').style.display='block';
+            document.getElementById('photo3').style.display='block';
+            document.getElementById('txt1').style.display='block';
+            var elem = document.getElementById("photo2"); 
+            var pos = 400;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos <= 200) {
+                    photoF=0;
+                    return;
+                } 
+                else {
+                    pos=pos-20; 
+                    elem.style.width = pos + 'px'; 
+                    elem.style.height = pos + 'px'; 
+                }
+            }
+        }
+        function anoMeet(){
+            document.getElementById('meetHer').style.display='none';
+            document.getElementById('photo').style.display='block';
+            document.getElementById('photo2').style.display='block';
+            document.getElementById('txt1').style.display='block';
+            var elem = document.getElementById("photo3"); 
+            var pos = 400;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos <= 200) {
+                    photoF=0;
+                    return;
+                } 
+                else {
+                    pos=pos-20; 
+                    elem.style.width = pos + 'px'; 
+                    elem.style.height = pos + 'px'; 
+                }
+            }
+        }
+        function go(){
+            window.location="https://www.youtube.com/watch?v=UjvMfcjBTwY";
+        }
+        </script>
+    </head>
+    <body>
+    <div id="photo" onclick="photoAct(1)"></div>
+    <br>
+    <br>
+    <div id="photo2" onclick="photoAct(2)"></div>
+    <br>
+    <br>
+    <div id="photo3" onclick="photoAct(3)"></div>
+    <div id="txt1">click photo!!</div>
+    <div id="choice" >
+        <ul>
+        <li class="off">姓名</li>
+        <li class="on">個人簡介</li>
+        <li class="off">語言</li>
+        <p onclick="photoRe(1)">X</p>
+        </ul>
+        <div id="firstPage" class="hide">
+            <a href = "#">黃暐程</a><br/>
+        </div>
+        <div id="secondPage" class="show">
+            <a href = "#">個性:成熟穩重負責認真</a><br/>
+            <a href = "#">興趣:卡牌遊戲，噁心遊戲</a><br/>
+            <a href = "#">簡歷:大學三年都是學渣QQ</a><br/>
+        </div>
+        <div id="thirdPage" class = "hide">
+            <a href = "#">C,C++,Chinese,java</a><br/>
+            <a href = "#">都只有皮毛，我真的學渣QQ</a><br/>
+        </div>
+    </div>
+    <div id ="dog">
+        <p onclick="photoRe(2)">X</p>
+        <br>
+        <p>這是我家的狗狗，你看過嗎?</p>
+        <br>
+        <p>不管怎樣，那你現在看過惹</p>   
+    </div>
+    <div id ="meetHer">
+            <p onclick="photoRe(3)">X</p>
+            <br>
+            <p>21歲，單身</p>
+            <br>
+            <p>想認識他嗎?</p>
+            <a onclick="go()">https://www.instagram.com/yun_sarang_/</a>   
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        
+        function showCh(){
+            var buf=$('#choice');
+            buf.animate({
+                'top':'0px'
+            },200);
+        }
+        function hideCh(){
+            var buf=$('#choice');
+            buf.animate({
+                'top':'100%'
+            },200);
+        }
+        function showDog(){
+            var buf=$('#dog');
+            buf.animate({
+                'top':'0px'
+            },200);
+        }
+        function hideDog(){
+            var buf=$('#dog');
+            buf.animate({
+                'top':'100%'
+            },200);
+        }
+        function showMeet(){
+            var buf=$('#meetHer');
+            buf.animate({
+                'top':'0px'
+            },200);
+        }
+        function hideMeet(){
+            var buf=$('#meetHer');
+            buf.animate({
+                'top':'100%'
+            },200);
+        }
+        function moveLeftHide(num){
+            var buf=getElementById("choice");
+            var pageBuf;
+            if(num==0){
+                pageBuf=$('#firstPage');
+            }
+            else{
+                if(num==1){
+                    pageBuf=$('#secondPage');
+                }
+                else{
+                    pageBuf=$('#thirdPage');
+                }
+            }
+            pageBuf.animate({
+                'padding':'0'
+            },100);
+        }
+    </script>
+    </body>
 </html>

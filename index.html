@@ -84,7 +84,9 @@
             for(var i = 0; i<myLi.length;i++){
                 myLi[i].index = i;
                 myLi[i].onclick = function change(){
-                    
+                    if(lastClick!=this.index){
+                        moveTxt(lastClick,this.index);
+                    }
                     for(var j = 0; j < myLi.length; j++){
                         
                         myLi[j].className="off";
@@ -93,15 +95,18 @@
                     for(var j = 0; j < myLi.length; j++){
                         
                         myDiv[j].className = "hide";
+                        
                     }
+                    
                     this.className = "on";
                     
                     myDiv[this.index].className = "show";
-
+                    moveTxt(lastClick,this.index);
                     lastClick=this.index;
+                    
                 }
             }
-        }
+        }       
         
         function photoAct(a){
             if(1/*photoF!=1*/){
@@ -246,16 +251,16 @@
         <p onclick="photoRe(1)">X</p>
         </ul>
         <div id="firstPage" class="hide">
-            <a href = "#">黃暐程</a><br/>
+            <a class="txtCh1" href = "#">黃暐程</a><br/>
         </div>
         <div id="secondPage" class="show">
-            <a href = "#">個性:成熟穩重負責認真</a><br/>
-            <a href = "#">興趣:卡牌遊戲，噁心遊戲</a><br/>
-            <a href = "#">簡歷:大學三年都是學渣QQ</a><br/>
+            <a class="txtCh2" href = "#">個性:成熟穩重負責認真</a><br/>
+            <a class="txtCh2" href = "#">興趣:卡牌遊戲，噁心遊戲</a><br/>
+            <a class="txtCh2" href = "#">簡歷:大學三年都是學渣QQ</a><br/>
         </div>
         <div id="thirdPage" class = "hide">
-            <a href = "#">C,C++,Chinese,java</a><br/>
-            <a href = "#">都只有皮毛，我真的學渣QQ</a><br/>
+            <a class="txtCh3" href = "#">C,C++,Chinese,java</a><br/>
+            <a class="txtCh3" href = "#">都只有皮毛，我真的學渣QQ</a><br/>
         </div>
     </div>
     <div id ="dog">
@@ -312,23 +317,32 @@
                 'top':'100%'
             },200);
         }
-        function moveLeftHide(num){
-            var buf=getElementById("choice");
-            var pageBuf;
-            if(num==0){
-                pageBuf=$('#firstPage');
+        function moveTxt(a,b){
+            
+            if(a==0||b==0){
+                $('.txtCh1').each(function(index, element) {
+                setTimeout(function() {
+                    $(element).toggle(100);
+                }, 0);
+            
+            })
             }
-            else{
-                if(num==1){
-                    pageBuf=$('#secondPage');
-                }
-                else{
-                    pageBuf=$('#thirdPage');
-                }
+            if(a==1||b==1){
+                $('.txtCh2').each(function(index, element) {
+                setTimeout(function() {
+                    $(element).toggle(100);
+                }, 0);
+            
+            })
             }
-            pageBuf.animate({
-                'padding':'0'
-            },100);
+            if(a==2||b==2){
+                $('.txtCh3').each(function(index, element) {
+                setTimeout(function() {
+                    $(element).toggle(100);
+                }, 0);
+            
+            })
+            }
         }
     </script>
     </body>
